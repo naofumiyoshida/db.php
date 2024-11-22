@@ -38,6 +38,9 @@ if (!$db_selected) {
 }
 
 $sql = "select * from country";
+if ($cname != "") {
+  $sql = $sql." where cname LIKE "."'%".$cname."%'";
+}
 echo("<h2>SQL</h2>");
 echo("<pre>$sql</pre>");
 $result = mysql_query($sql);
